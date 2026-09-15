@@ -29,13 +29,14 @@ A demo account is available directly from the landing page (no sign-up required)
 
 ## Built with
 
-- [Next.js](https://nextjs.org/) (App Router) — React framework
+- [Next.js](https://nextjs.org/) (App Router): React framework
 - [TypeScript](https://www.typescriptlang.org/)
-- [Clerk](https://clerk.com/) — authentication
-- [Prisma](https://www.prisma.io/) — ORM
-- [TanStack Query](https://tanstack.com/query) — data fetching and caching
-- [Zod](https://zod.dev/) — schema validation
-- [Recharts](https://recharts.org/) — charts
-- [Tailwind CSS](https://tailwindcss.com/) — styling
-- [shadcn/ui](https://ui.shadcn.com/) — UI components
-- [Lucide](https://lucide.dev/) — icons
+- [Clerk](https://clerk.com/): authentication
+- [Prisma](https://www.prisma.io/): ORM
+- [TanStack Query](https://tanstack.com/query): data fetching and caching
+- [React Hook Form](https://react-hook-form.com/): form state management
+- [Zod](https://zod.dev/): schema validation
+- [Recharts](https://recharts.org/): charts
+- [Tailwind CSS](https://tailwindcss.com/): styling
+- [shadcn/ui](https://ui.shadcn.com/): UI components
+- [Lucide](https://lucide.dev/): icons
