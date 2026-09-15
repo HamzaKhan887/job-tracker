@@ -36,7 +36,7 @@ export default function HomePage() {
           <h1 className='capitalize text-4xl md:text-6xl font-bold'>
             job <span className='text-primary'>tracking</span> app
           </h1>
-          <p className='leading-loose mt-4'>
+          <p className='leading-loose max-w-lg mt-4'>
             Track and manage all your applications in one place. Log the role,
             company and status as you apply, then search and filter by role,
             company, status, location, job type and arrangement to find exactly
