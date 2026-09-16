@@ -1,38 +1,53 @@
 'use client'
 
+import { useState } from 'react'
 import { useUser, useClerk, useSignIn } from '@clerk/nextjs'
 import { Button } from '@/components/ui/button'
 import { createDemoSignInToken } from '@/utils/actions'
+import { useRouter } from 'next/navigation'
 
-function DemoLoginButton() {
+function DemoLoginBtn() {
   const { signIn, setActive, isLoaded } = useSignIn()
   const { isSignedIn } = useUser()
   const { signOut } = useClerk()
+  const router = useRouter()
+  const [isPending, setIsPending] = useState(false)
 
   async function handleDemoLogin() {
-    if (!isLoaded) return
+    if (!isLoaded || isPending) return
+    setIsPending(true)
 
-    if (isSignedIn) {
-      await signOut()
-    }
+    try {
+      if (isSignedIn) {
+        await signOut()
+      }
 
-    const token = await createDemoSignInToken()
-    const result = await signIn.create({
-      strategy: 'ticket',
-      ticket: token,
-    })
+      const token = await createDemoSignInToken()
+      const result = await signIn.create({
+        strategy: 'ticket',
+        ticket: token,
+      })
 
-    if (result.status === 'complete') {
-      await setActive({ session: result.createdSessionId })
-      window.location.href = '/add-job'
+      if (result.status === 'complete') {
+        await setActive({ session: result.createdSessionId })
+        router.push('/add-job')
+        router.refresh()
+      }
+    } finally {
+      setIsPending(false)
     }
   }
 
   return (
-    <Button type='button' onClick={handleDemoLogin} variant='secondary'>
-      Try Demo
+    <Button
+      type='button'
+      onClick={handleDemoLogin}
+      variant='secondary'
+      disabled={isPending}
+    >
+      {isPending ? 'Signing in...' : 'Try Demo'}
     </Button>
   )
 }
 
-export default DemoLoginButton
+export default DemoLoginBtn
