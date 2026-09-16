@@ -29,7 +29,7 @@ A demo account is available directly from the landing page (no sign-up required)
 
 ## Built with
 
-- [Next.js](https://nextjs.org/) (App Router): React framework
+- [Next.js](https://nextjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Clerk](https://clerk.com/): authentication
 - [Prisma](https://www.prisma.io/): ORM
