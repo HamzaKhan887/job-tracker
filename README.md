@@ -39,4 +39,3 @@ A demo account is available directly from the landing page (no sign-up required)
 - [Recharts](https://recharts.org/): charts
 - [Tailwind CSS](https://tailwindcss.com/): styling
 - [shadcn/ui](https://ui.shadcn.com/): UI components
-- [Lucide](https://lucide.dev/): icons
