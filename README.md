@@ -1,18 +1,8 @@
 # Job Tracker
 
-**Live site:** https://hk-jobtracker.vercel.app/
+**Live site:** [https://hk-jobtracker.vercel.app/](https://hk-jobtracker.vercel.app/)
 
 Track and manage all your applications in one place. Log the role, company and status as you apply, then search and filter by role, company, status, location, job type and arrangement to find exactly what you need. A built-in stats page turns all that data into clear charts and breakdowns, so you can see exactly how your search is progressing at a glance.
-
-## Screenshots
-
-**All Jobs:** search, filter and page through every application you've logged.
-
-![All jobs page](./assets/all-jobs.png)
-
-**Stats:** monthly application trends, plus a breakdown by job type and work arrangement.
-
-![Stats page](./assets/stats.png)
 
 ## Try it out
 
@@ -25,7 +15,24 @@ A demo account is available directly from the landing page (no sign-up required)
 - Paginated results for large lists of applications
 - A stats dashboard with a breakdown of applications by status, a monthly applications chart, and pie charts for job type and work arrangement
 - Authentication handled via Clerk, including a one-click demo login
-- Light and dark theme support
+
+## Screenshots
+
+**All Jobs:** search, filter and page through every application you've logged.
+
+![All jobs page](./assets/all-jobs.png)
+
+**Add Job:** log a new application with its role, company, location, status, job type and work arrangement.
+
+![Add job form](./assets/add-job.png)
+
+**Stats Overview:** applied, interview, offer, accepted, declined and withdrawn counts, and the monthly applications chart.
+
+![Stats overview](./assets/stats-1.png)
+
+**Stats Breakdown:** the full monthly applications chart, and the pie charts for job type and work arrangement.
+
+![Stats breakdown](./assets/stats-2.png)
 
 ## Built with
 
@@ -33,9 +40,9 @@ A demo account is available directly from the landing page (no sign-up required)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Clerk](https://clerk.com/): authentication
 - [Prisma](https://www.prisma.io/): ORM
+- [Supabase](https://supabase.com/): database
 - [TanStack Query](https://tanstack.com/query): data fetching and caching
-- [React Hook Form](https://react-hook-form.com/): form state management
-- [Zod](https://zod.dev/): schema validation
+- [React Hook Form](https://react-hook-form.com/) & [Zod](https://zod.dev/): form state management and schema validation
 - [Recharts](https://recharts.org/): charts
 - [Tailwind CSS](https://tailwindcss.com/): styling
 - [shadcn/ui](https://ui.shadcn.com/): UI components

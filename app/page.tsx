@@ -1,7 +1,12 @@
+'use client'
+
 import Image from 'next/image'
 import Logo from '../assets/logo.svg'
-import JobsScreenshot from '../assets/all-jobs.png'
-import StatsScreenshot from '../assets/stats.png'
+import AllJobs from '../assets/all-jobs.png'
+import AddJob from '../assets/add-job.png'
+import Stats1 from '../assets/stats-1.png'
+import Stats2 from '../assets/stats-2.png'
+
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import DemoLoginButton from '@/components/DemoLoginButton'
@@ -12,26 +17,48 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from '@/components/ui/carousel'
+import ThemeToggle from '@/components/ThemeToggle'
+import { useUser } from '@clerk/nextjs'
+import AccountMenu from '@/components/AccountMenu'
 
 const screenshots = [
   {
-    src: JobsScreenshot,
+    src: AllJobs,
     alt: 'List of tracked job applications with search and filters',
   },
   {
-    src: StatsScreenshot,
+    src: AddJob,
+    alt: 'Add job form with fields for position, company, location, status, job type and work arrangement',
+  },
+  {
+    src: Stats1,
+    alt: 'Stats overview with applied, interview, offer, accepted, declined and withdrawn counts, and the monthly applications chart',
+  },
+  {
+    src: Stats2,
     alt: 'Monthly applications chart and pie charts breaking down job type and work arrangement',
   },
 ]
 
 export default function HomePage() {
+  const { isSignedIn } = useUser()
   return (
-    <main className='lg:h-screen flex flex-col lg:overflow-hidden'>
-      <header className='max-w-7xl w-full mx-auto px-4 sm:px-8 py-6'>
+    <main className='lg:h-screen flex flex-col justify-center px-4 sm:px-8 lg:px-20 lg:overflow-hidden'>
+      <header className='w-full mx-auto py-6 flex flex-col gap-4 sm:flex-row sm:gap-0 items-center justify-between'>
         <Image src={Logo} alt='logo' />
+        <div className='flex items-center justify-between gap-3'>
+          <ThemeToggle />
+          {isSignedIn ? (
+            <AccountMenu />
+          ) : (
+            <Button asChild>
+              <Link href='/add-job'>Sign In / Register</Link>
+            </Button>
+          )}
+        </div>
       </header>
 
-      <section className='max-w-7xl w-full mx-auto px-4 sm:px-8 mt-8 lg:mt-0 flex-1 grid lg:grid-cols-[1fr,600px] items-center'>
+      <section className='w-full mx-auto mt-8 lg:mt-0 flex-1 grid lg:grid-cols-[0.85fr,1.15fr] items-center'>
         <div className='max-w-xl'>
           <h1 className='capitalize text-4xl md:text-6xl font-bold'>
             job <span className='text-primary'>tracking</span> app
@@ -42,7 +69,7 @@ export default function HomePage() {
             company, status, location, job type and arrangement to find exactly
             what you need. A built-in stats page turns all that data into clear
             charts and breakdowns, so you can see exactly how your search is
-            progressing at a glance.
+            progressing at a glance
           </p>
           <div className='flex flex-wrap items-center gap-4 mt-4'>
             <Button asChild>

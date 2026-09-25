@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 import { createDemoSignInToken } from '@/utils/actions'
 import { useRouter } from 'next/navigation'
 
-function DemoLoginBtn() {
+function DemoLoginButton() {
   const { signIn, setActive, isLoaded } = useSignIn()
   const { isSignedIn } = useUser()
   const { signOut } = useClerk()
@@ -50,4 +50,4 @@ function DemoLoginBtn() {
   )
 }
 
-export default DemoLoginBtn
+export default DemoLoginButton

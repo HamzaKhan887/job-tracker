@@ -4,7 +4,7 @@ import AccountMenu from '@/components/AccountMenu'
 
 function Navbar() {
   return (
-    <nav className='border-b border-border py-4 sm:px-16 lg:px-24 px-4 flex items-center justify-between'>
+    <nav className='border-b border-border py-4 px-4 sm:px-8 lg:px-16 flex items-center justify-between'>
       <div>
         <LinksDropdown />
       </div>
