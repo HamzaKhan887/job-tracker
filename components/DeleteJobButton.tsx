@@ -2,6 +2,7 @@ import { Button } from './ui/button'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { deleteJobAction } from '@/utils/actions'
 import { useToast } from '@/components/ui/use-toast'
+import { Spinner } from '@/components/ui/spinner'
 
 function DeleteJobButton({ id }: { id: string }) {
   const { toast } = useToast()
@@ -33,7 +34,7 @@ function DeleteJobButton({ id }: { id: string }) {
       }}
       variant='destructive'
     >
-      {isPending ? 'deleting...' : 'delete'}
+      {isPending ? <Spinner /> : 'delete'}
     </Button>
   )
 }

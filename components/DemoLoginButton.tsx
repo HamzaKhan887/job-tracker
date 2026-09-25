@@ -5,6 +5,7 @@ import { useUser, useClerk, useSignIn } from '@clerk/nextjs'
 import { Button } from '@/components/ui/button'
 import { createDemoSignInToken } from '@/utils/actions'
 import { useRouter } from 'next/navigation'
+import { Spinner } from '@/components/ui/spinner'
 
 function DemoLoginButton() {
   const { signIn, setActive, isLoaded } = useSignIn()
@@ -45,7 +46,7 @@ function DemoLoginButton() {
       variant='secondary'
       disabled={isPending}
     >
-      {isPending ? 'Signing in...' : 'Try Demo'}
+      {isPending ? <Spinner /> : 'Try Demo'}
     </Button>
   )
 }

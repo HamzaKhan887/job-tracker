@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useUser, useClerk, UserButton } from '@clerk/nextjs'
 import { Button } from '@/components/ui/button'
 import { useRouter } from 'next/navigation'
+import { Spinner } from '@/components/ui/spinner'
 
 const DEMO_USER_ID = 'user_3JKeCH7cF5QI8qh1G4TDXkIv5Ne'
 
@@ -26,7 +27,7 @@ function AccountMenu() {
   if (isDemoUser) {
     return (
       <Button type='button' onClick={handleSignOut} disabled={isPending}>
-        {isPending ? 'Signing out...' : 'Sign Out (Demo)'}
+        {isPending ? <Spinner /> : 'Sign Out (Demo)'}
       </Button>
     )
   }

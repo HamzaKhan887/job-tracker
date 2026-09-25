@@ -165,15 +165,15 @@ function SearchForm() {
           </div>
 
           <div className='flex items-end gap-2'>
-            <Button type='submit' className='w-full'>
-              Search
-            </Button>
             {hasActiveFilters && (
               <Button type='button' variant='destructive' onClick={handleClear}>
                 <X className='w-4 h-4 mr-2' />
                 Clear
               </Button>
             )}
+            <Button type='submit' className='w-full'>
+              Search
+            </Button>
           </div>
         </form>
       </CollapsibleContent>

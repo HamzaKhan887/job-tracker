@@ -20,6 +20,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { createJobAction } from '@/utils/actions'
 import { useToast } from '@/components/ui/use-toast'
 import { useRouter } from 'next/navigation'
+import { Spinner } from '@/components/ui/spinner'
 
 function CreateJobForm() {
   const form = useForm<CreateAndEditJobType>({
@@ -99,7 +100,7 @@ function CreateJobForm() {
           className='w-full mt-4 capitalize'
           disabled={isPending}
         >
-          {isPending ? 'loading' : 'create job'}
+          {isPending ? <Spinner /> : 'create job'}
         </Button>
       </form>
     </Form>

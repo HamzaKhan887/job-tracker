@@ -78,7 +78,13 @@ export default function HomePage() {
             <DemoLoginButton />
           </div>
         </div>
-        <Carousel className='hidden lg:block'>
+        <Carousel
+          className='hidden lg:block'
+          opts={{
+            align: 'start',
+            loop: true,
+          }}
+        >
           <CarouselContent>
             {screenshots.map((screenshot) => (
               <CarouselItem key={screenshot.alt}>

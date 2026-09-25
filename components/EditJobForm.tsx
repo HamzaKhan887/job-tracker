@@ -19,6 +19,7 @@ import { useMutation, useQueryClient, useQuery } from '@tanstack/react-query'
 import { getSingleJobAction, updateJobAction } from '@/utils/actions'
 import { useToast } from '@/components/ui/use-toast'
 import { useRouter } from 'next/navigation'
+import { Spinner } from '@/components/ui/spinner'
 
 function EditJobForm({ jobId }: { jobId: string }) {
   const queryClient = useQueryClient()
@@ -110,7 +111,7 @@ function EditJobForm({ jobId }: { jobId: string }) {
           className='w-full mt-4 capitalize'
           disabled={isPending}
         >
-          {isPending ? 'updating...' : 'edit job'}
+          {isPending ? <Spinner /> : 'edit job'}
         </Button>
       </form>
     </Form>
