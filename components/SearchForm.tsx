@@ -5,6 +5,7 @@ import { Label } from './ui/label'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { Button } from './ui/button'
 import { ChevronDown, SlidersHorizontal, X } from 'lucide-react'
+import { useIsFetching } from '@tanstack/react-query'
 
 import {
   Select,
@@ -19,8 +20,10 @@ import {
   CollapsibleTrigger,
 } from '@/components/ui/collapsible'
 import { JobStatus, JobMode, JobArrangement } from '@/utils/types'
+import { Spinner } from '@/components/ui/spinner'
 
 function SearchForm() {
+  const isFetching = useIsFetching({ queryKey: ['jobs'] }) > 0
   const searchParams = useSearchParams()
   const search = searchParams.get('search') || ''
   const jobStatus = searchParams.get('jobStatus') || 'all'
@@ -171,8 +174,8 @@ function SearchForm() {
                 Clear
               </Button>
             )}
-            <Button type='submit' className='w-full'>
-              Search
+            <Button type='submit' className='w-full' disabled={isFetching}>
+              {isFetching ? <Spinner /> : 'Search'}
             </Button>
           </div>
         </form>
