@@ -1,4 +1,4 @@
-# Job Tracker App
+# Job Tracker
 
 **Live site:** [https://hk-jobtracker.vercel.app/](https://hk-jobtracker.vercel.app/)
 
